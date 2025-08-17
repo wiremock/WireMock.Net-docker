@@ -22,12 +22,12 @@ docker rmi $(docker images -f "dangling=true" -q)
 ### 4. Tag
 
 ``` cmd
-docker tag sheyenrath/wiremock.net-nanoserver-1809:latest sheyenrath/wiremock.net-nanoserver-1809:1.8.14
+docker tag sheyenrath/wiremock.net-nanoserver-1809:latest sheyenrath/wiremock.net-nanoserver-1809:1.9.1
 ```
 
 ### 5. Push
 
 ``` cmd
 docker push sheyenrath/wiremock.net-nanoserver-1809:latest
-docker push sheyenrath/wiremock.net-nanoserver-1809:1.8.14
+docker push sheyenrath/wiremock.net-nanoserver-1809:1.9.1
 ```

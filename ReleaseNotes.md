@@ -1,4 +1,4 @@
-# 1.8.14 (15 May 2025)
+# 1.9.1 (15 May 2025)
 - [#54](https://github.com/wiremock/WireMock.Net-docker/pull/54) - Use .NET 8.0 base image [feature] contributed by [StefH](https://github.com/StefH)
 - [#31](https://github.com/wiremock/WireMock.Net-docker/issues/31) - How do I consume it? [question]
 - [#46](https://github.com/wiremock/WireMock.Net-docker/issues/46) - Arm64 docker images are broken [bug]
