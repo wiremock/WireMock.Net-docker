@@ -67,3 +67,10 @@ jobs:
     inputs:
       targetType: inline
       script: docker rmi $(docker images --filter "dangling=true" --quiet)
+
+  - task: PowerShell@2
+    condition: and(succeeded(), eq(variables['deleteDangling'], 'yes'))
+    displayName: 'Removing everything unused (images, containers, volumes, networks)'
+    inputs:
+      targetType: inline
+      script: docker system prune -a -f
