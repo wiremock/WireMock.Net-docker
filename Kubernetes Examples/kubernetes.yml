@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: wiremock-net
-        image: index.docker.io/sheyenrath/wiremock.net:1.13.0
+        image: index.docker.io/sheyenrath/wiremock.net:1.14.0-preview-01
         env:
         - name: WIREMOCK_NET_VAR1
           value: "Value 1"
