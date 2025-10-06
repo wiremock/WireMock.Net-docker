@@ -2,7 +2,7 @@ variables:
   buildConfiguration: 'Release'
   imageNameArm: 'wiremock.net-arm$(arm-version)'
   buildProjects: '**/StandAlone.NETCoreApp.csproj'
-  tag: '1.14.0-preview-01'
+  tag: '1.14.0'
   deleteDangling: '$(deleteDanglingImages)'
 
 trigger: none
