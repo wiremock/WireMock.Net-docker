@@ -2,7 +2,7 @@ variables:
   buildConfiguration: 'Release'
   imageName: 'wiremock.net-windows'
   buildProjects: '**/StandAlone.NETCoreApp.csproj'
-  tag: '1.14.0'
+  tag: '1.15.0'
 
 trigger: none
 
