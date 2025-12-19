@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0.404-nanoserver-1809 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0.416-nanoserver-1809 AS build-env
 
 LABEL maintainer="Stef Heyenrath"
 
