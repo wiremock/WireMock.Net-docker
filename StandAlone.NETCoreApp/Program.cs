@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using WireMock.OpenTelemetry;
 using WireMock.Server;
 using WireMock.Settings;
 
@@ -17,6 +18,24 @@ class Program
         {
             Console.Error.WriteLine("Commandline arguments are invalid. WireMock.Net cannot start.");
             Environment.Exit(0);
+        }
+
+        // Parse OpenTelemetry options and wire up OTEL export if enabled
+        OpenTelemetryOptionsParser.TryParseArguments(args, Environment.GetEnvironmentVariables(), out var openTelemetryOptions);
+        if (openTelemetryOptions is not null)
+        {
+            // Enable activity tracing so middleware creates activities
+            settings.ActivityTracingOptions ??= new ActivityTracingOptions
+            {
+                ExcludeAdminRequests = openTelemetryOptions.ExcludeAdminRequests
+            };
+
+            var existingRegistration = settings.AdditionalServiceRegistration;
+            settings.AdditionalServiceRegistration = services =>
+            {
+                existingRegistration?.Invoke(services);
+                services.AddWireMockOpenTelemetry(openTelemetryOptions);
+            };
         }
 
         _server = WireMockServer.Start(settings);
