@@ -43,20 +43,6 @@ docker pull sheyenrath/wiremock.net-nanoserver-<version>
 docker run -it --rm -p 9091:80 sheyenrath/wiremock.net-nanoserver-<version>
 ```
 
-## Windows 2019
-
-### Pull latest image
-
-```sh
-docker pull sheyenrath/wiremock.net-windows-2019
-```
-
-### Start the WireMock.Net container
-
-```sh
-docker run -it --rm -p 9091:80 sheyenrath/wiremock.net-windows-2019
-```
-
 ## Windows 2022
 
 ### Pull latest image
@@ -69,6 +55,20 @@ docker pull sheyenrath/wiremock.net-windows
 
 ```sh
 docker run -it --rm -p 9091:80 sheyenrath/wiremock.net-windows
+```
+
+## Windows 2025
+
+### Pull latest image
+
+```sh
+docker pull sheyenrath/wiremock.net-windows-2025
+```
+
+### Start the WireMock.Net container
+
+```sh
+docker run -it --rm -p 9091:80 sheyenrath/wiremock.net-windows-2025
 ```
 
 ## Commands
