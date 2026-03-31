@@ -1,13 +1,13 @@
 variables:
   buildConfiguration: 'Release'
-  imageName: 'wiremock.net-windows-2019'
+  imageName: 'wiremock.net-windows-2025'
   buildProjects: '**/StandAlone.NETCoreApp.csproj'
   tag: '2.2.0'
 
 trigger: none
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-2025'
 
 steps:
 - task: UseDotNet@2
@@ -29,7 +29,7 @@ steps:
     command: 'build'
     containerRegistry: 'DockerRegistry'
     repository: '$(DOCKER_ID)/$(imageName)'
-    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile.windows-2019'
+    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile.windows-2025'
     tags: |
       $(tag)
       latest
@@ -40,7 +40,7 @@ steps:
     command: 'push'
     containerRegistry: 'DockerRegistry'
     repository: '$(DOCKER_ID)/$(imageName)'
-    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile.windows-2019'
+    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile.windows-2025'
     tags: |
       $(tag)
       latest

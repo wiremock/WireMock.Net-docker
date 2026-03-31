@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0-windowsservercore-ltsc2019 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:8.0-windowsservercore-ltsc2025 AS build-env
 
 LABEL maintainer="Stef Heyenrath"
 
@@ -13,7 +13,7 @@ COPY *.cs ./
 RUN dotnet publish -c Release -o out
 
 # build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2019   
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-windowsservercore-ltsc2025
 ENV ASPNETCORE_HTTP_PORTS=80
 WORKDIR /app
 COPY --from=build-env /app/out ./
@@ -21,5 +21,5 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "wiremock-net.dll", "--Urls", "http://*:80", "--WireMockLogger", "WireMockConsoleLogger"]
 
 # Just some info to build and run:
-# build with : docker build -t sheyenrath/wiremock.net-windows-2019 -f Dockerfile.windows-2019 .
-# run with   : docker run --rm -i -p 9090:80 sheyenrath/wiremock.net-windows-2019 --AdminUsername a --AdminPassword b
+# build with : docker build -t sheyenrath/wiremock.net-windows-2025 -f Dockerfile.windows-2025 .
+# run with   : docker run --rm -i -p 9090:80 sheyenrath/wiremock.net-windows-2025 --AdminUsername a --AdminPassword b
