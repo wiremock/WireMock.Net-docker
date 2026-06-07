@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11620.152 stable
+VisualStudioVersion = 18.4.11620.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StandAlone.NETCoreApp", "StandAlone.NETCoreApp\StandAlone.NETCoreApp.csproj", "{053EA9FA-E42A-4E57-9EC5-7F0F2D6E4014}"
 EndProject
@@ -9,12 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		azure-pipelines-alpine.yml = azure-pipelines-alpine.yml
 		azure-pipelines-arm.yml = azure-pipelines-arm.yml
-		azure-pipelines-windows.yml = azure-pipelines-windows.yml
 		azure-pipelines-windows-2025.yml = azure-pipelines-windows-2025.yml
+		azure-pipelines-windows.yml = azure-pipelines-windows.yml
 		azure-pipelines.nano.yml = azure-pipelines.nano.yml
 		azure-pipelines.yml = azure-pipelines.yml
 		StandAlone.NETCoreApp\docker-compose.yml = StandAlone.NETCoreApp\docker-compose.yml
-		GitHubReleaseNotes.txt = GitHubReleaseNotes.txt
+		GitHubReleaseNotes.bat = GitHubReleaseNotes.bat
 		README.md = README.md
 		ReleaseNotes.md = ReleaseNotes.md
 		trivy.cmd = trivy.cmd

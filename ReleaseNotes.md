@@ -1,11 +1,21 @@
-# 2.4.0 (15 May 2025)
-- [#54](https://github.com/wiremock/WireMock.Net-docker/pull/54) - Use .NET 8.0 base image [feature] contributed by [StefH](https://github.com/StefH)
+# 2.9.0 (07 June 2026)
+- [#57](https://github.com/wiremock/WireMock.Net-docker/pull/57) - Update WireMock.Net to 1.24.0 and add OpenTelemetry support [feature] contributed by [petrroll](https://github.com/petrroll)
+- [#58](https://github.com/wiremock/WireMock.Net-docker/pull/58) - Windows 2025 [feature] contributed by [StefH](https://github.com/StefH)
+
+# 1.8.4 (13 May 2025)
+- [#56](https://github.com/wiremock/WireMock.Net-docker/issues/56) - CVE-2025-24070 - High [bug]
+
+# 1.8.0 (29 April 2025)
 - [#31](https://github.com/wiremock/WireMock.Net-docker/issues/31) - How do I consume it? [question]
+
+# 1.7.0 (22 January 2025)
+- [#54](https://github.com/wiremock/WireMock.Net-docker/pull/54) - Use .NET 8.0 base image [feature] contributed by [StefH](https://github.com/StefH)
 - [#46](https://github.com/wiremock/WireMock.Net-docker/issues/46) - Arm64 docker images are broken [bug]
-- [#49](https://github.com/wiremock/WireMock.Net-docker/issues/49) - Document how to enable request and response logs [question]
 - [#52](https://github.com/wiremock/WireMock.Net-docker/issues/52) - Extended support for .NET 6 (LTS) ends on 12 November 2024 [feature]
 - [#53](https://github.com/wiremock/WireMock.Net-docker/issues/53) - .NET 8 version? [question]
-- [#56](https://github.com/wiremock/WireMock.Net-docker/issues/56) - CVE-2025-24070 - High [bug]
+
+# 1.6.8 (25 November 2024)
+- [#49](https://github.com/wiremock/WireMock.Net-docker/issues/49) - Document how to enable request and response logs [question]
 
 # 1.6.7 (17 October 2024)
 - [#48](https://github.com/wiremock/WireMock.Net-docker/pull/48) - Resolve CVE-2023-5363 and CVE-2023-5678 in alpine image [bug] contributed by [dmytro-pryvedeniuk](https://github.com/dmytro-pryvedeniuk)

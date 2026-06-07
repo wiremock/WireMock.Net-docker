@@ -19,4 +19,4 @@ spec:
     spec:
       containers:
       - name: wiremock-net
-        image: sheyenrath/wiremock.net:2.4.0
+        image: sheyenrath/wiremock.net:2.9.0
