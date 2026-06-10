@@ -7,39 +7,27 @@ variables:
 trigger: none
 
 pool:
-  vmImage: 'Ubuntu-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: UseDotNet@2
-  inputs:
-    packageType: 'sdk'
-    version: 8.0.x
-
-- task: DotNetCoreCLI@2
-  displayName: Build StandAlone.NETCoreApp
-  inputs:
-    command: 'build'
-    arguments: /p:Configuration=$(buildConfiguration)
-    projects: $(buildProjects)
-
 - task: Docker@2
-  displayName: 'Build Docker [$(imageName)(latest,$(tag)]'
+  displayName: Login to registry
   inputs:
-    command: 'build'
-    containerRegistry: 'DockerRegistry'
-    repository: '$(DOCKER_ID)/$(imageName)'
-    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile'
-    tags: |
-      $(tag)
-      latest
+    command: login
+    containerRegistry: DockerRegistry
 
-- task: Docker@2
-  displayName: 'Push Docker [$(imageName)(latest,$(tag)]'
-  inputs:
-    command: 'push'
-    containerRegistry: 'DockerRegistry'
-    repository: '$(DOCKER_ID)/$(imageName)'
-    dockerfile: '$(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile'
-    tags: |
-      $(tag)
-      latest
+- script: |
+    docker run --privileged --rm tonistiigi/binfmt --install all
+    docker buildx create --use --name builder
+    docker buildx inspect --bootstrap
+  displayName: Set up Docker buildx
+
+- script: |
+    docker buildx build \
+      --platform linux/amd64,linux/arm64,linux/arm/v7 \
+      --tag $(DOCKER_ID)/$(imageName):$(tag) \
+      --tag $(DOCKER_ID)/$(imageName):latest \
+      --file $(Build.SourcesDirectory)/StandAlone.NETCoreApp/Dockerfile \
+      $(Build.SourcesDirectory)/StandAlone.NETCoreApp \
+      --push
+  displayName: 'Build multi-arch Docker image [$(imageName)(latest,$(tag)]'
