@@ -1,4 +1,4 @@
-# 2.9.0 (07 June 2026)
+# 2.11.0 (07 June 2026)
 - [#57](https://github.com/wiremock/WireMock.Net-docker/pull/57) - Update WireMock.Net to 1.24.0 and add OpenTelemetry support [feature] contributed by [petrroll](https://github.com/petrroll)
 - [#58](https://github.com/wiremock/WireMock.Net-docker/pull/58) - Windows 2025 [feature] contributed by [StefH](https://github.com/StefH)
 
