@@ -1,4 +1,5 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+ARG TARGETARCH
 
 LABEL maintainer="Stef Heyenrath"
 
@@ -6,11 +7,11 @@ WORKDIR /app
 
 # copy csproj and restore as distinct layers
 COPY StandAlone.NETCoreApp.csproj ./
-RUN dotnet restore
+RUN dotnet restore -a $TARGETARCH
 
 # copy everything else and build
 COPY *.cs ./
-RUN dotnet publish -c Release -r linux-x64 -o out
+RUN dotnet publish -c Release -a $TARGETARCH -o out --no-restore
 
 # build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
@@ -20,7 +21,3 @@ COPY --from=build-env /app/out ./
 EXPOSE 80
 ENTRYPOINT ["./wiremock-net", "--Urls", "http://*:80"]
 CMD ["--WireMockLogger", "WireMockConsoleLogger"]
-
-# Just some info:
-# build with : docker build -t sheyenrath/wiremock.net .
-# run with   : docker run --rm -p 9091:80 sheyenrath/wiremock.net

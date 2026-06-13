@@ -9,22 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WireMock.Net" Version="1.7.4" />
-    <!--<PackageReference Include="WireMock.Net.Matchers.CSharpCode" Version="1.7.4" />-->
+    <PackageReference Include="WireMock.Net" Version="2.11.0" />
+    <PackageReference Include="WireMock.Net.Matchers.CSharpCode" Version="2.11.0" />
   </ItemGroup>
 
-  <!-- CVE -->
-  <ItemGroup>
-    <!-- CVE-2018-8292 -->
-    <PackageReference Include="System.Net.Http" Version="4.3.4" />
-
-    <!-- CVE-2019-0980 CVE-2019-0981 CVE-2019-0657 -->
-    <PackageReference Include="System.Private.Uri" Version="4.3.2" />
-
-    <!-- CVE-2019-0820 -->
-    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NuGetForDocker\" />
-  </ItemGroup>
 </Project>
