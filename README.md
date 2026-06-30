@@ -18,10 +18,17 @@ docker pull sheyenrath/wiremock.net
 docker pull sheyenrath/wiremock.net-alpine
 ```
 
-### Start the WireMock.Net container
+### Start the WireMock.Net container using Docker
 
 ```sh
 docker run -it --rm -p 9091:80 sheyenrath/wiremock.net
+```
+
+### Start the WireMock.Net container using WSLC
+See [WSL container is now available for public preview](https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/).
+
+``` ps
+wslc run -it --rm -p 9091:80 sheyenrath/wiremock.net-alpine
 ```
 
 ## Windows NanoServer
