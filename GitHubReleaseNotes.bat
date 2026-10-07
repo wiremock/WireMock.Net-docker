@@ -1,3 +1,3 @@
 REM https://github.com/StefH/GitHubReleaseNotes
 
-GitHubReleaseNotes.Exe --output ReleaseNotes.md --language en --version 2.14.0
+GitHubReleaseNotes.Exe --output ReleaseNotes.md --language en --version 2.19.0
