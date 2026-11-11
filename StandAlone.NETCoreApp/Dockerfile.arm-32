@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim-arm32v7 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build-env
 
 LABEL maintainer="Stef Heyenrath"
 
@@ -13,7 +13,7 @@ COPY *.cs ./
 RUN dotnet publish -c Release -r linux-arm --no-self-contained -o out
 
 # build runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
 ENV ASPNETCORE_HTTP_PORTS=80
 
 WORKDIR /app
